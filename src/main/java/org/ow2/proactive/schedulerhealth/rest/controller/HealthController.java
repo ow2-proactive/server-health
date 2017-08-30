@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthController {
 
-    @RequestMapping(value = "/health", method = RequestMethod.GET)
+    @RequestMapping(value = "/general", method = RequestMethod.GET)
     public SchedulerHealth index() {
         return new SchedulerHealth();
     }
+
 }
