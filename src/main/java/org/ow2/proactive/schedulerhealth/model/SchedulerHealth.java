@@ -1,18 +1,17 @@
 package org.ow2.proactive.schedulerhealth.model;
 
+import lombok.Data;
 import org.ow2.proactive.schedulerhealth.utils.WebPortalsProber;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 
-
 /**
  * This class models the scheduler health.
  */
-public class SchedulerHealth {
+public @Data class SchedulerHealth {
 
-    long jvmStartTime, jvmUptime;
-    long heapMemoryUsage;
+    long jvmStartTime, jvmUptime, heapMemoryUsage;
     String classpath, libpath;
     String jvmName, jvmVersion;
 
@@ -45,61 +44,5 @@ public class SchedulerHealth {
         studioHTTPcode = webPortalsProber.getHTTPretcode("localhost", "studio", 8080);
         rmHTTPcode = webPortalsProber.getHTTPretcode("localhost", "rm", 8080);
         schedulerHTTPcode = webPortalsProber.getHTTPretcode("localhost", "scheduler", 8080);
-    }
-
-    public long getJvm_uptime() {
-        return jvmUptime;
-    }
-
-    public int getRmHTTPcode() {
-        return rmHTTPcode;
-    }
-
-    public int getStudioHTTPcode() {
-        return studioHTTPcode;
-    }
-
-    public int getSchedulerHTTPcode() {
-        return schedulerHTTPcode;
-    }
-
-    public int getRmCurlCode() {
-        return rmCurlCode;
-    }
-
-    public int getStudioCurlCode() {
-        return studioCurlCode;
-    }
-
-    public int getSchedulerCurlCode() {
-        return schedulerCurlCode;
-    }
-
-    public long getJvmStartTime() {
-        return jvmStartTime;
-    }
-
-    public long getJvmUptime() {
-        return jvmUptime;
-    }
-
-    public long getHeapMemoryUsage() {
-        return heapMemoryUsage;
-    }
-
-    public String getClasspath() {
-        return classpath;
-    }
-
-    public String getLibpath() {
-        return libpath;
-    }
-
-    public String getJvmName() {
-        return jvmName;
-    }
-
-    public String getJvmVersion() {
-        return jvmVersion;
     }
 }
