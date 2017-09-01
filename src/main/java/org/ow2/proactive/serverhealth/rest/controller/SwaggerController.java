@@ -13,6 +13,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
+/**
+ * Created by Gaëtan Hurel on 9/1/17.
+ *
+ * Simple controller for Swagger and Swagger UI.
+ */
 public class SwaggerController {
     @Bean
 
