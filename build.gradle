@@ -17,6 +17,13 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'war'
+apply plugin: 'application'
+
+mainClassName = 'org.ow2.proactive.serverhealth.SchedulerHealthApplication'
+
+springBoot {
+    mainClass = mainClassName
+}
 
 // version is not set to make the war filename short and nice
 war {
@@ -28,7 +35,7 @@ jar {
     // Version is define in gradle.properties
     version =  serverHealthVersion
     manifest {
-        attributes 'Main-Class': 'org.ow2.proactive.schedulerhealth.SchedulerHealthApplication'
+        attributes 'Main-Class': mainClassName
         attributes 'Class-Path': "."
     }
 }
@@ -53,8 +60,20 @@ dependencies {
     // For using the rest jersey annotations
     compile 'org.springframework.boot:spring-boot-starter-jersey:1.3.1.RELEASE'
 
+    // Json project
+    compile 'org.json:json:20151123'
+
+    // Leverage production-grade service for spring-boot project
+    // such as monitoring and
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+
+    // Swagger
     compile 'io.springfox:springfox-swagger2:2.4.0'
     compile 'io.springfox:springfox-swagger-ui:2.4.0'
+
+    // Support for easy class to Json convertion and vice verca
+    compile 'com.aol.microservices:micro-jackson-configuration:0.90.3'
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.boot:spring-boot-starter-web')
 }
