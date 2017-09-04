@@ -1,4 +1,4 @@
-package org.ow2.proactive.schedulerhealth.rest.client;
+package org.ow2.proactive.serverhealth.rest.client;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

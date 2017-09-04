@@ -1,4 +1,4 @@
-package org.ow2.proactive.schedulerhealth.utils;
+package org.ow2.proactive.serverhealth.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

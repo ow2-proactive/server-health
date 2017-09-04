@@ -1,4 +1,4 @@
-package org.ow2.proactive.schedulerhealth.rest.controller;
+package org.ow2.proactive.serverhealth.rest.controller;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

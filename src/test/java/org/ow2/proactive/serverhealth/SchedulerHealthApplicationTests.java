@@ -1,4 +1,4 @@
-package org.ow2.proactive.schedulerhealth;
+package org.ow2.proactive.serverhealth;
 
 import org.junit.Test;
 //import org.junit.runner.RunWith;
