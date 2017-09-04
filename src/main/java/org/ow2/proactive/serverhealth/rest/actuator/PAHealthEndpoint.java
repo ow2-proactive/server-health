@@ -1,4 +1,4 @@
-package org.ow2.proactive.schedulerhealth.rest.actuator;
+package org.ow2.proactive.serverhealth.rest.actuator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.endpoint.Endpoint;

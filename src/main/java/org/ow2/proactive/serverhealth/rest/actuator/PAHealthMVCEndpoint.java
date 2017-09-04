@@ -1,6 +1,6 @@
-package org.ow2.proactive.schedulerhealth.rest.actuator;
+package org.ow2.proactive.serverhealth.rest.actuator;
 
-import org.ow2.proactive.schedulerhealth.service.AuthenticationService;
+import org.ow2.proactive.serverhealth.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.endpoint.HealthEndpoint;
 import org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter;
@@ -55,7 +55,6 @@ public class PAHealthMVCEndpoint extends EndpointMvcAdapter {
             return Response.ok(delegate.invoke()).build();
         }
         // user is not admin, doing nothing
-        // TODO: return 401 or default error message
         return Response.status(Response.Status.UNAUTHORIZED)
                 .entity("Unauthorized. Log on the scheduler as admin first.")
                 .type(MediaType.APPLICATION_JSON)
