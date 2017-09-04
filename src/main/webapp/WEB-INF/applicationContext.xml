@@ -7,6 +7,6 @@
 	http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
     <!-- ************ Scan the base package for all beans *********** -->
-    <context:component-scan base-package="org.ow2.proactive.schedulerhealth" />
+    <context:component-scan base-package="org.ow2.proactive.serverhealth" />
 
 </beans>
